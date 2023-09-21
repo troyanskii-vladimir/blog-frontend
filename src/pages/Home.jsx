@@ -38,13 +38,13 @@ export const Home = () => {
               key={obj._id}
               id={obj._id}
               title={obj.title}
-              imageUrl={obj.imageUrl}
+              imageUrl={obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ''}
               user={obj.user}
               createdAt={obj.createdAt}
               viewsCount={obj.viewsCount}
               commentsCount={obj.commentsCount}
               tags={obj.tags}
-              isEditable={userData?._id === obj.user.id}
+              isEditable={userData?._id === obj.user._id}
             />
           ))}
         </Grid>
